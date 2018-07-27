@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jdtaste.mybatis.mapper.ProductSpecificTmpMapper">
+    <resultMap id="BaseResultMap" type="com.jdtaste.mybatis.domain.ProductSpecificTmp">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="classify_id" jdbcType="INTEGER" property="classifyId"/>
+        <result column="classify_name" jdbcType="VARCHAR" property="classifyName"/>
+        <result column="specifics" jdbcType="VARCHAR" property="specifics"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, classify_id, classify_name, specifics
+  </sql>
+    <select id="getByClassifyId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from product_specific_tmp
+        where classify_id = #{classifyId,jdbcType=INTEGER}
+    </select>
+    <select id="getList" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from product_specific_tmp
+        where status = 1
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from product_specific_tmp
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+    <insert id="insertSelective" parameterType="com.jdtaste.mybatis.domain.ProductSpecificTmp">
+        insert into product_specific_tmp
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="classifyId != null">
+                classify_id,
+            </if>
+            <if test="classifyName != null">
+                classify_name,
+            </if>
+            <if test="specifics != null">
+                specifics,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="classifyId != null">
+                #{classifyId,jdbcType=INTEGER},
+            </if>
+            <if test="classifyName != null">
+                #{classifyName,jdbcType=VARCHAR},
+            </if>
+            <if test="specifics != null">
+                #{specifics,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.jdtaste.mybatis.domain.ProductSpecificTmp">
+        update product_specific_tmp
+        <set>
+            <if test="classifyName != null">
+                classify_name = #{classifyName,jdbcType=VARCHAR},
+            </if>
+            <if test="specifics != null">
+                specifics = #{specifics,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where classify_id = #{classifyId,jdbcType=INTEGER}
+    </update>
+
+</mapper>
