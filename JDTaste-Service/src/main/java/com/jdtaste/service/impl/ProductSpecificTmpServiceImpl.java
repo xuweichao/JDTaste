@@ -20,7 +20,7 @@ public class ProductSpecificTmpServiceImpl implements IProductSpecificTmpService
     @Autowired
     ProductSpecificTmpMapper productSpecificTmpMapper;
 
-    @Override
+    
     public int saveProductSpecificTmp(ProductSpecificTmp productSpecificTmp) {
         if (productSpecificTmp.getId() == 0&&
                 productSpecificTmpMapper.getByClassifyId(productSpecificTmp.getClassifyId())==null) {
@@ -30,13 +30,13 @@ public class ProductSpecificTmpServiceImpl implements IProductSpecificTmpService
         }
     }
 
-    @Override
+    
     public List<ProductSpecificTmp> getProductSpecificTmpList() {
 
         return productSpecificTmpMapper.getList();
     }
 
-    @Override
+    
     public int deleteProductSpecificTmp(int id) {
         return productSpecificTmpMapper.deleteByPrimaryKey(id);
     }
