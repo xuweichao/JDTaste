@@ -20,12 +20,12 @@ public class ProductSpecificServiceImpl implements IProductSpecificService {
     @Autowired
     ProductSpecificMapper productSpecificMapper;
 
-    @Override
+   
     public List<ProductSpecific> getProductSpecificList() {
         return productSpecificMapper.getAll();
     }
 
-    @Override
+   
     public int saveProductSpecific(ProductSpecific productSpecific) {
         if (productSpecific.getId() == 0) {
 
@@ -35,7 +35,7 @@ public class ProductSpecificServiceImpl implements IProductSpecificService {
         }
     }
 
-    @Override
+   
     public int deleteProductSpecific(int id) {
         return productSpecificMapper.deleteByPrimaryKey(id);
     }

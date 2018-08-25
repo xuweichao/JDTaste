@@ -24,7 +24,7 @@ public class UserBaseServiceImpl implements IUserBaseService {
      * @param account
      * @return
      */
-    @Override
+    
     public UserBase userLogin(String account) {
         return userBaseMapper.getByAccount(account);
     }
@@ -35,7 +35,7 @@ public class UserBaseServiceImpl implements IUserBaseService {
      * @param userBase
      * @return
      */
-    @Override
+    
     public int regist(UserBase userBase) {
         String phone = userBase.getPhone();
         if (findUserByAccount(phone)==null) {
@@ -46,14 +46,14 @@ public class UserBaseServiceImpl implements IUserBaseService {
         }
     }
 
-    @Override
+    
     public UserBase login(UserBase userBase) {
 
         return userBaseMapper.login(userBase);
 
     }
 
-    @Override
+    
     public UserBase findUserByAccount(String account) {
        return userBaseMapper.isExistAccount(account);
     }

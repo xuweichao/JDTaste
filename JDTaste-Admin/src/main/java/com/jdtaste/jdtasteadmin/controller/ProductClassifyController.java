@@ -6,7 +6,6 @@ import com.jdtaste.mybatis.domain.ProductClassify;
 import com.jdtaste.mybatis.domain.ProductClassifySelector;
 import com.jdtaste.service.IProductClassifyService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

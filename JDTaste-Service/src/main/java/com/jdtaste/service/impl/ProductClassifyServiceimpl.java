@@ -21,7 +21,7 @@ public class ProductClassifyServiceimpl implements IProductClassifyService {
     @Autowired
     ProductClassifyMapper productClassifyMapper;
 
-    @Override
+    
     public int saveProductClassify(ProductClassify productClassify) {
         if (productClassify.getId() == 0) {
             return productClassifyMapper.insertSelective(productClassify);
@@ -30,12 +30,11 @@ public class ProductClassifyServiceimpl implements IProductClassifyService {
         }
     }
 
-    @Override
+    
     public List<ProductClassify> getAllProductClassify() {
         return productClassifyMapper.selectMainItem();
     }
 
-    @Override
     public void delProductClassify(int id) {
         if (productClassifyMapper.selectByPrimaryKey(id) == 0) {//主分类
             productClassifyMapper.deleteByParentId(id);
@@ -45,7 +44,6 @@ public class ProductClassifyServiceimpl implements IProductClassifyService {
         }
     }
 
-    @Override
     public List<ProductClassifySelector> getProductClassifyselectList() {
         return productClassifyMapper.getSelectorList();
     }
