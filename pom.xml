@@ -15,6 +15,7 @@
         <module>JDTaste-Sso</module>
         <module>JDTaste-Admin</module>
         <module>JDTaste-Generator</module>
+        <module>JDTaste-Search</module>
     </modules>
 
 

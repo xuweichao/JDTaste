@@ -1,6 +1,7 @@
-package com.jdtaste.common.util;
+package com.jdtaste.search.es;
 
 import org.elasticsearch.action.index.IndexResponse;
+import org.elasticsearch.action.update.UpdateResponse;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
@@ -16,7 +17,7 @@ import java.util.Map;
  */
 public class ESUtils {
     private  static  TransportClient client;
-    private static String CLUSTERNAME="my-application";
+    private static String CLUSTERNAME="xuweichao-application";
     private static String HOST="localhost";
     private static int PORT=9300;
 
@@ -24,6 +25,10 @@ public class ESUtils {
         client=creatClient();
     }
 
+    /**
+     * 创建client
+     * @return
+     */
     public static TransportClient creatClient()  {
         Settings esSettings = Settings.builder()
                 .put("cluster.name", CLUSTERNAME) //设置ES实例的名称
@@ -37,6 +42,41 @@ public class ESUtils {
             e.printStackTrace();
         }
         return client;
+    }
+
+    /**
+     * 保存数据
+     * @param doc
+     * @param index
+     * @param type
+     * @return
+     */
+    public IndexResponse insertData(Map<String, Object> doc,String index,String type){
+        IndexResponse response = client.prepareIndex("student", "student")
+                .setSource(doc)
+                .get();
+        return response;
+    }
+
+    /**
+     *
+     * @param doc
+     * @param index
+     * @param type
+     * @param id
+     * @return
+     */
+    public UpdateResponse updateData(Map<String, Object> doc,String index,String type,String id){
+        UpdateResponse updateResponse =
+                this.client
+                        .prepareUpdate()
+                        .setIndex(index)
+                        .setType(type)
+                        .setId(id)
+                        .setDoc(doc)
+                        .get();
+
+        return updateResponse;
     }
 
 

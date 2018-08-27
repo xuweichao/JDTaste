@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JDTaste-Search/JDTaste-Search.iml" filepath="$PROJECT_DIR$/JDTaste-Search/JDTaste-Search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JDTaste-Admin/jdtaste-admin.iml" filepath="$PROJECT_DIR$/JDTaste-Admin/jdtaste-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JDTaste-Commom/jdtaste-commom.iml" filepath="$PROJECT_DIR$/JDTaste-Commom/jdtaste-commom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JDTaste-Dao/jdtaste-dao.iml" filepath="$PROJECT_DIR$/JDTaste-Dao/jdtaste-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JDTaste-Generator/jdtaste-generator.iml" filepath="$PROJECT_DIR$/JDTaste-Generator/jdtaste-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jdtaste-parent.iml" filepath="$PROJECT_DIR$/jdtaste-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JDTaste-Service/jdtaste-service.iml" filepath="$PROJECT_DIR$/JDTaste-Service/jdtaste-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JDTaste-Sso/jdtaste-sso.iml" filepath="$PROJECT_DIR$/JDTaste-Sso/jdtaste-sso.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="jdtaste-admin" />
+        <module name="jdtaste-commom" />
+        <module name="jdtaste-dao" />
+        <module name="jdtaste-generator" />
+        <module name="JDTaste-Search" />
+        <module name="jdtaste-service" />
+        <module name="jdtaste-sso" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jdtaste-admin" target="1.8" />
+      <module name="jdtaste-commom" target="1.5" />
+      <module name="jdtaste-dao" target="1.5" />
+      <module name="jdtaste-generator" target="1.5" />
+      <module name="jdtaste-parent" target="1.5" />
+      <module name="JDTaste-Search" target="1.7" />
+      <module name="jdtaste-service" target="1.5" />
+      <module name="jdtaste-sso" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
